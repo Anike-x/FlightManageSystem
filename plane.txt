@@ -1,0 +1,5 @@
+1 NewYork LosAngeles 08:00 11:00 150 300
+2 Chicago Miami 09:00 12:00 120 250
+3 Dallas Houston 10:00 11:30 100 200
+4 Seattle SanFrancisco 07:00 09:00 130 280
+5 Boston Washington 06:00 08:00 110 220
