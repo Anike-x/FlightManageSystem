@@ -7,39 +7,40 @@
 void checkUser(){
     char name[10];
     char passwd[20];
-    cout<<"è¯·è¾“å…¥ç”¨æˆ·åï¼š";
+    cout<<"ÇëÊäÈëÓÃ»§Ãû£º";
     cin>>name;
-    cout<<"è¯·è¾“å…¥å¯†ç ï¼š";
+    cout<<"ÇëÊäÈëÃÜÂë£º";
     cin>>passwd;
     user *p;
     p = userist;
     while(p!=NULL){
         if(p->name == name && p->passwd == passwd){
-            cout<<"ç™»å½•æˆåŠŸ"<<endl;
+            cout<<"µÇÂ¼³É¹¦"<<endl;
             usermenu();
             return;
         }
         p=p->next;
     }
-    cout<<"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯"<<endl;
+    cout<<"ÓÃ»§Ãû»òÃÜÂë´íÎó"<<endl;
 }
 
 void checkManager(){
     char name[10];
     char passwd[20];
-    cout<<"è¯·è¾“å…¥ç”¨æˆ·åï¼š";
+    cout<<"ÇëÊäÈëÓÃ»§Ãû£º";
     cin>>name;
-    cout<<"è¯·è¾“å…¥å¯†ç ï¼š";
+    cout<<"ÇëÊäÈëÃÜÂë£º";
     cin>>passwd;
     manager *p;
     p = managerlist;
     while(p!=NULL){
         if(p->name == name && p->passwd == passwd){
-            cout<<"ç™»å½•æˆåŠŸ"<<endl;
+            cout<<"µÇÂ¼³É¹¦"<<endl;
             managermenu();
             return;
         }
         p=p->next;
     }
-    cout<<"ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯"<<endl;
+    cout<<"ÓÃ»§Ãû»òÃÜÂë´íÎó"<<endl;
+    system("cls");
 }

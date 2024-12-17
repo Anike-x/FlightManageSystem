@@ -21,13 +21,12 @@ void connectAndFillPlaneList(){
                   >> newPlane->takeTime
                   >> newPlane->site
                   >> newPlane->price)) {
-            delete newPlane;  // é‡Šæ”¾å†…å­˜
-            break;            // é€€å‡ºå¾ªçŽ¯
+            delete newPlane;  // ÊÍ·ÅÄÚ´æ
+            break;            // ÍË³öÑ­»·
         }
         p->next = newPlane;
         newPlane->next = nullptr;
         p = newPlane;
     }
-
     fin.close();
 }
