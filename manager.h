@@ -19,6 +19,7 @@ typedef struct manager
 extern manager *managerlist;
 
 void managermenu();
+void searchAllPlane();
 void addPlane();
 void deletePlane();
 void changePlane();

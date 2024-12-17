@@ -4,6 +4,11 @@
 
 #include "login.h"
 
+void init(){
+    connectAndFillUserList();
+    connectAndFillPlaneList();
+}
+
 void checkUser(){
     char name[10];
     char passwd[20];

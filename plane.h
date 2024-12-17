@@ -17,6 +17,7 @@ typedef struct plane
     string takeTime; // 降落时间
     int site; // 座位数
     int price; // 票价
+    int order; // 订票数
     struct plane* next; // 结点的指针域
 }plane;
 

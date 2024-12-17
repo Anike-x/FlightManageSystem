@@ -7,11 +7,12 @@
 using namespace std;
 
 plane *planelist = nullptr;
+plane *planeOrder = nullptr;
 user *userist = nullptr;
 manager *managerlist = nullptr;
 
 int main() {
-    connectAndFillPlaneList();
+    init();
     int choice;
     while(1){
         cout<<"1.ÓÃ»§"<<endl;

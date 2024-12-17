@@ -19,7 +19,7 @@ void usermenu(){
         switch(choice){
             case 1:
                 //查询航班信息
-                searchPlane();
+                searchMyPlane();
                 break;
             case 2:
                 //订票
@@ -48,10 +48,34 @@ void usermenu(){
     }
 }
 
+void connectAndFillUserList() {
+    userist = new user;
+    userist->next = nullptr;
+    user* p = userist;
+    ifstream fin("D:\\CLion\\projects\\FlightManageSystem\\user.txt");
+    if (!fin.is_open()) {
+        cerr << "Error opening file" << endl;
+        return;
+    }
+    while (true) {
+        auto* newUser = new user;
+        if (!(fin >> newUser->name
+                  >> newUser->passwd
+                  >> newUser->card)) {
+            delete newUser;  // Release memory
+            break;           // Exit loop
+        }
+        p->next = newUser;
+        newUser->next = nullptr;
+        p = newUser;
+    }
+    fin.close();
+}
+
 //查询航班信息
-void searchPlane(){
+void searchMyPlane(){
     plane *p;
-    p = planelist;
+    p = planeOrder;
     while(p!=NULL){
         cout<<"航班号："<<p->id<<endl;
         cout<<"起飞城市："<<p->startCity<<endl;
@@ -60,6 +84,7 @@ void searchPlane(){
         cout<<"降落时间："<<p->takeTime<<endl;
         cout<<"座位数："<<p->site<<endl;
         cout<<"票价："<<p->price<<endl;
+        cout<<endl;
         p=p->next;
     }
 }

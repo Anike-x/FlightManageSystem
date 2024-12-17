@@ -14,15 +14,16 @@ typedef struct user
     string name;
     string passwd;
     string card;
-    plane *order;
+    plane *userorder;
     struct user *next;//结点的指针域
 }user;//乘客信息
 
 extern user *userist;
-
+extern plane *planeOrder;
 
 void usermenu();
-void searchPlane();
+void connectAndFillUserList();
+void searchMyPlane();
 void orderTicket();
 void returnTicket();
 void searchUserInfo();

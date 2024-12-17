@@ -9,6 +9,7 @@
 #include "user.h"
 #include "manager.h"
 
+void init();
 void checkUser();
 void checkManager();
 

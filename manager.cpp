@@ -20,7 +20,7 @@ void managermenu(){
         switch(choice){
             case 1:
                 //查询航班信息
-                searchPlane();
+                searchAllPlane();
                 break;
             case 2:
                 //添加航班信息
@@ -46,6 +46,22 @@ void managermenu(){
         }
         system("pause");
         system("cls");
+    }
+}
+
+//查询航班信息
+void searchAllPlane(){
+    plane *p;
+    p = planelist;
+    while(p!=NULL){
+        cout<<"航班号："<<p->id<<endl;
+        cout<<"起飞城市："<<p->startCity<<endl;
+        cout<<"降落城市："<<p->finCity<<endl;
+        cout<<"起飞时间："<<p->takeOffTime<<endl;
+        cout<<"降落时间："<<p->takeTime<<endl;
+        cout<<"座位数："<<p->site<<endl;
+        cout<<"票价："<<p->price<<endl;
+        p=p->next;
     }
 }
 
@@ -116,6 +132,8 @@ void changePlane(){
             cin>>p->takeTime;
             cout<<"请输入新的座位数：";
             cin>>p->site;
+            cout<<"请输入已订票数：";
+            cin>>p->order;
             cout<<"请输入新的票价：";
             cin>>p->price;
             cout<<"修改成功"<<endl;
@@ -134,6 +152,17 @@ void searchAllUserInfo(){
         cout<<"用户名："<<p->name<<endl;
         cout<<"密码："<<p->passwd<<endl;
         cout<<"银行卡号："<<p->card<<endl;
+        cout<<"订票信息："<<endl;
+        while (p->userorder!=NULL){
+            cout<<"航班号："<<p->userorder->id<<endl;
+            cout<<"起飞城市："<<p->userorder->startCity<<endl;
+            cout<<"降落城市："<<p->userorder->finCity<<endl;
+            cout<<"起飞时间："<<p->userorder->takeOffTime<<endl;
+            cout<<"降落时间："<<p->userorder->takeTime<<endl;
+            cout<<"座位数："<<p->userorder->site<<endl;
+            cout<<"票价："<<p->userorder->price<<endl;
+            p->userorder = p->userorder->next;
+        }
         p=p->next;
     }
 }
